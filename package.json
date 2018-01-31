@@ -1,0 +1,27 @@
+{
+  "name": "labeler-function",
+  "version": "1.0.0",
+  "description": "A function to generate pdfs from images",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logan-laughery/LabelerServer.git"
+  },
+  "keywords": [
+    "labeler"
+  ],
+  "author": "Logan Laughery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/logan-laughery/LabelerServer/issues"
+  },
+  "homepage": "https://github.com/logan-laughery/LabelerServer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "html-pdf": "^2.2.0"
+  }
+}
