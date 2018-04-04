@@ -7,6 +7,14 @@ const pdfGenerator = require('./src/generatePdf.js');
  * @param {Object} res Cloud Function response context.
  **/
 exports.getPdf = (req, res) => {
+  if (req.method === 'OPTIONS') {
+    res.set('Access-Control-Allow-Origin', '*')
+      .set('Access-Control-Allow-Origin', 'GET, POST')
+      .set('Access-Control-Expose-Headers', 'Content-Disposition')
+      .status(200);
+    return;
+  }
+
   pdfGenerator.generatePdf(req.body.image, (err, data) => {
     //res.send(data);
     res.writeHead(200, {
