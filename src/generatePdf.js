@@ -1,5 +1,5 @@
 const htmlPdf = require('html-pdf');
-const defaultHtml = require('../assets/default.js');
+const defaultHtml = require('./templates/default.js');
 const htmlText = defaultHtml.content;
 
 var options = { format: 'Letter' };
