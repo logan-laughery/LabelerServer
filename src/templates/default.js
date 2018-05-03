@@ -93,15 +93,17 @@ exports.content =
       }
 
       img {
-        width: 100%;
+        width: 120mm;
         margin: 0 auto;
+        margin-bottom: 10mm;
         display: block;
         page-break-after: auto;
         overflow: hidden;
-        position: absolute;
+        position: relative;
       }
 
       .page {
+        width: 100%;
         height: 100%;
         position:relative;
       }
