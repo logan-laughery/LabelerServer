@@ -1,3 +1,7 @@
+# Custom
+creds.js
+*.zip
+
 # Logs
 logs
 *.log

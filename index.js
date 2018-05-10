@@ -1,6 +1,20 @@
 'use strict';
 const pdfGenerator = require('./src/generatePdf.js');
 const cors = require("cors");
+const creds = require('./creds.js');
+
+function hasValidCreds(user, pass) {
+  if (!creds.user || !creds.pass) {
+    console.log('Add a ./creds.js file for auth config');
+    return false;
+  } else if (creds.user !== user) {
+    return false;
+  } else if (creds.pass !== pass) {
+    return false
+  }
+
+  return true;
+}
 
 /**
  * HTTP Cloud Function.
@@ -18,6 +32,13 @@ exports.getPdf = (req, res) => {
   }**/
   var corsFn = cors({ origin: true, exposedHeaders: 'Content-Disposition' });
   corsFn(req, res, function() {
+    if (!hasValidCreds(req.body.user, req.body.pass)) {
+      console.log('Invalid access attempted!');
+      res.status(403);
+      res.send('Invalid access attempt');
+      return;
+    }
+
     pdfGenerator.generatePdf(req.body.image, (err, data) => {
       //res.send(data);
       res.writeHead(200, {
