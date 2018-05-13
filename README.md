@@ -1,3 +1,7 @@
+# Labeler Server
+
+> PDF Generating back end for [Labeler](https://github.com/logan-laughery/Labeler)
+
 ## Local Debugging
 
 ```bash
